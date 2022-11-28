@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'one';
+    src: url("NotoSansEgyptianHieroglyphs-Regular.ttf");
+    font-weight: 1 999;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+
+}
+
+body {
+    position: absolute;
+    background-color: #ffffff !important;
+    ;
+    background-image: url('striped_4.png');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    font-family: 'one';
+    font-size: 9.9vw;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+select {
+    border: none;
+}
+
+.icon_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 1em;
+    z-index: 99;
+}
+
+.icon {
+    display: inline-grid;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: rgba(255, 255, 255, 1);
+    ;
+    border: 0.8px solid black;
+    border-radius: 150px;
+    color: black;
+    font-size: 10vw;
+    z-index: 99;
+}
+
+/*the container must be positioned relative:*/
+.custom-select {
+    display: inline-grid;
+    justify-content: space-evenly;
+    position: relative;
+    width: 25%;
+    margin-right: -2.4%;
+    font-family: 'one';
+    border-radius: 150px;
+    border: none;
+    background-color: #000000;
+    color: white;
+}
+
+.custom-select select {
+    display: none;
+    padding: 0;
+    height: 100%;
+    background-color: #000000;
+    box-shadow: inset 0.1em 0.1em 0.8em black;
+}
+
+.select-selected {
+    border-radius: 50%;
+    /* color: black; */
+    /* color: #ffffff; */
+}
+
+.select-selected:hover {
+    color: #CDFF00;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+    border-radius: 100px;
+    padding: 8px 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s;
+    /* top: 100%; */
+}
+
+/*style items (options):*/
+.select-items {
+    top: 100%;
+    display: inline-grid;
+    position: absolute;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-right: -2.4%;
+    background-color: #CDFF00;
+    color: black;
+    z-index: 99;
+}
+
+.select-items:nth-child(17) .select-selected{
+    bottom: 100%;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+
+}
+
+@media print {
+    html {
+        transform: scaleX(100%);
+        transform: scaleY(111%);
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: -10px;
+        overflow: visible;
+
+    }
+
+    canvas {
+        zoom: 100%;
+    }
+
+    @page {
+        size: A4
+    }
+}

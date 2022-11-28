@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린일기 Drawn Journal</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="jquery.corner.js"></script>
+
+
+
+    <div class="printing">
+        <div class="icon_wrapper">
+            <div id="icon" class="icon" onclick="window.print()">
+                <span class="material-symbols-outlined">
+                    print
+                </span>
+            </div>
+
+            <div id="icon" class="icon" onclick="resetSketch()">
+                <span class="material-symbols-outlined">
+                    restart_alt
+                </span>
+            </div>
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+
+        </div>
+
+
+        <br>
+        <br>
+
+        <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+        <div class="custom-select" onchange="changeBorder(this)">
+            <select "border">
+                <option value="0">&#77824;</option>
+                <option value="1">&#77824;</option>
+                <option value="2">&#77825;</option>
+                <option value="3">&#77827;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#77942;</option>
+                <option value="1">&#77942;</option>
+                <option value="2">&#77943;</option>
+                <option value="3">&#77944;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#77914;</option>
+                <option value="1">&#77914;</option>
+                <option value="2">&#77916;</option>
+                <option value="3">&#77921;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#77992;</option>
+                <option value="1">&#77992;</option>
+                <option value="2">&#77991;</option>
+                <option value="3">&#77993;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#77998;</option>
+                <option value="1">&#77998;</option>
+                <option value="2">&#77999;</option>
+                <option value="3">&#78000;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78013;</option>
+                <option value="1">&#78013;</option>
+                <option value="2">&#78014;</option>
+                <option value="3">&#78015;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78024;</option>
+                <option value="1">&#78024;</option>
+                <option value="2">&#78017;</option>
+                <option value="3">&#78023;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78034;</option>
+                <option value="1">&#78034;</option>
+                <option value="2">&#78036;</option>
+                <option value="3">&#78038;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78042;</option>
+                <option value="1">&#78042;</option>
+                <option value="2">&#78043;</option>
+                <option value="3">&#78045;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78122;</option>
+                <option value="1">&#78122;</option>
+                <option value="2">&#78121;</option>
+                <option value="3">&#78120;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78151;</option>
+                <option value="1">&#78151;</option>
+                <option value="2">&#78150;</option>
+                <option value="3">&#78144;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78448;</option>
+                <option value="1">&#78448;</option>
+                <option value="2">&#78456;</option>
+                <option value="3">&#78447;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78546;</option>
+                <option value="1">&#78546;</option>
+                <option value="2">&#78545;</option>
+                <option value="3">&#78547;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78645;</option>
+                <option value="1">&#78645;</option>
+                <option value="2">&#78643;</option>
+                <option value="3">&#78646;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78660;</option>
+                <option value="1">&#78660;</option>
+                <option value="2">&#78659;</option>
+                <option value="3">&#78661;</option>
+            </select>
+        </div>
+        <div class="custom-select">
+            <select>
+                <option value="0">&#78685;</option>
+                <option value="1">&#78685;</option>
+                <option value="2">&#78686;</option>
+                <option value="3">&#78684;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse"><!-- .reverse 클래스가 있으면 위로 펼쳐짐. -->
+            <select>
+                <option value="0">&#77938;</option>
+                <option value="1">&#77938;</option>
+                <option value="2">&#77937;</option>
+                <option value="3">&#77933;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#77960;</option>
+                <option value="1">&#77960;</option>
+                <option value="2">&#77961;</option>
+                <option value="3">&#77962;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78233;</option>
+                <option value="1">&#78233;</option>
+                <option value="2">&#78225;</option>
+                <option value="3">&#78231;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78493;</option>
+                <option value="1">&#78493;</option>
+                <option value="2">&#78492;</option>
+                <option value="3">&#78491;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78848;</option>
+                <option value="1">&#78848;</option>
+                <option value="2">&#78850;</option>
+                <option value="3">&#78856;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78379;</option>
+                <option value="1">&#78379;</option>
+                <option value="2">&#78374;</option>
+                <option value="3">&#78372;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78237;</option>
+                <option value="1">&#78237;</option>
+                <option value="2">&#78241;</option>
+                <option value="3">&#78235;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78199;</option>
+                <option value="1">&#78199;</option>
+                <option value="2">&#78206;</option>
+                <option value="3">&#78191;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#77951;</option>
+                <option value="1">&#77951;</option>
+                <option value="2">&#77952;</option>
+                <option value="3">&#77950;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78197;</option>
+                <option value="1">&#78197;</option>
+                <option value="2">&#78202;</option>
+                <option value="3">&#78205;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#77897;</option>
+                <option value="1">&#77897;</option>
+                <option value="2">&#77899;</option>
+                <option value="3">&#77826;</option>
+            </select>
+        </div>
+        <div class="custom-select reverse">
+            <select>
+                <option value="0">&#78048;</option>
+                <option value="1">&#78048;</option>
+                <option value="2">&#78049;</option>
+                <option value="3">&#77903;</option>
+            </select>
+        </div>
+
+    </div>
+
+    <script src="drawing.js">
+    </script>
+    <script src="selecting.js">
+    </script>
+
+</body>
+
+</html>
