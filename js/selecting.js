@@ -19,7 +19,7 @@ for (i = 0; i < l; i++) {
     const customSelect = $(selElmnt).parent();
     const isReverse = customSelect.hasClass('reverse');
     if (isReverse) {
-        $(b).css('top', ((ll -1) * -100) + '%');
+        $(b).css('top', ((ll - 1) * -100) + '%');
     }
 
     for (j = 1; j < ll; j++) {
@@ -55,7 +55,7 @@ for (i = 0; i < l; i++) {
             h.click();
         });
         // 셀렉트 박스가 위로 열릴 때, 옵션 순서를 뒤집음
-        if (isReverse) { 
+        if (isReverse) {
             $(b).prepend(c);
         } else {
             $(b).append(c);
@@ -109,26 +109,37 @@ function changeStyle(el, value) {
     let shadow;
     let bgcolor;
     if (value == '1') {
-        color = 'white';
-        bgcolor = 'black';
-        radius = '10px';
-        shadow = 'inset 0.1em 0.1em 0.8em white';
+        color = 'black';
+        bgcolor = 'white';
+        radius = '5px';
+        shadow = 'inset 0.1em 0.5em 0.8em black';
     } else if (value == '2') {
         color = 'white';
         bgcolor = 'black';
         radius = '30px';
-        shadow = 'inset 0.1em 0.1em 0.8em white';
+        shadow = 'inset 0.3em 0.5em 0.8em white';
     } else if (value == '3') {
-        color = 'black';
-        bgcolor = 'white';
-        radius = '90px';
-        shadow = 'inset 0.1em 0.1em 0.8em black';
+        color = 'white';
+        bgcolor = 'grey';
+        radius = '60px';
+        shadow = 'inset 0.5em 0.1em 0.8em black';
     }
 
     el.css({
         'background-color': bgcolor,
         'color': color,
-        'border-radius' : radius,
-        'box-shadow' : shadow
+        'border-radius': radius,
+        'box-shadow': shadow
+    });
+
+    // Animation ( https://animate.style/ )
+    const animateClass = 'animate__animated animate__swing';
+
+    el.removeClass(animateClass).addClass(animateClass);
+
+    el[0].addEventListener('animationend', function () {
+        el.removeClass(animateClass);
     });
 }
+
+

@@ -8,7 +8,9 @@
     <title>그린일기 Drawn Journal</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -18,7 +20,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
     <script src="jquery.corner.js"></script>
-
 
 
     <div class="printing">
@@ -40,6 +41,25 @@
             <div></div>
             <div></div>
             <div></div>
+
+
+            <div id="myBtn" class="icon" onclick="">
+                <span class="material-symbols-outlined">
+                    question_mark
+                </span>
+            </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>글이 아닌 그림으로 일기를 써봅시다.<br>우리는 그림문자로 어떤 이야기를 만들 수 있을까요?<br>각 칸을 터치하여 그림을 고르고, 이야기를 만들어 보아요.<br>하얀 공간에는 손가락으로 이름을 써도, 그림을 그려도 좋아요.<br>마친 후에는 종이 위에 프린트하여 전시해볼까요?<br>다른 사람들의 이야기도 함께 상상해보아요.</p>
+                </div>
+
+            </div>
+
             <div></div>
 
 
@@ -178,7 +198,8 @@
                 <option value="3">&#78684;</option>
             </select>
         </div>
-        <div class="custom-select reverse"><!-- .reverse 클래스가 있으면 위로 펼쳐짐. -->
+        <div class="custom-select reverse">
+            <!-- .reverse 클래스가 있으면 위로 펼쳐짐. -->
             <select>
                 <option value="0">&#77938;</option>
                 <option value="1">&#77938;</option>
@@ -277,9 +298,11 @@
 
     </div>
 
-    <script src="drawing.js">
+    <script src="js/drawing.js">
     </script>
-    <script src="selecting.js">
+    <script src="js/selecting.js">
+    </script>
+    <script src="js/modal.js">
     </script>
 
 </body>
