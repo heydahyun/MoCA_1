@@ -15,11 +15,6 @@
 body {
     margin: 10px;
     position: absolute;
-    background-color: #ffffff !important;
-    background-image: url('../src/check.png');
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
     font-family: 'one';
     font-size: 9.9vw;
     -moz-user-select: none;
@@ -28,10 +23,20 @@ body {
     user-select: none;
     overflow-x: hidden;
     overflow-y: hidden;
+
+    background-color: #ffffff !important;
+    background-image: url('../src/check.png');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
 }
 
 select {
     border: none;
+}
+
+.printing {
+
 }
 
 .icon_wrapper {
@@ -59,7 +64,7 @@ select {
     display: inline-grid;
     justify-content: space-evenly;
     position: relative;
-    width: 23%;
+    width: 25%;
     margin-right: -2.5%;
     font-family: 'one';
     border-radius: 150px;
@@ -130,31 +135,32 @@ select {
 }
 
 @media print {
-    html {
-        transform: scaleX(100%);
-        transform: scaleY(111%);
-        margin-top: 15px;
-        margin-left: 15px;
-        margin-right: 5px;
-        overflow: visible;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-        -webkit-filter: opacity(1);
+
+    html{
+    /* width: 210mm;
+    height: 297mm; */
+    zoom: 64%;
     }
 
-    .custom-select {
-        width: 24.5%;
-        margin-right: -2.5%;
-        margin-top: .08%;
+    .icon {
+        display: none;
     }
+
+    
+
+    /* .printing {
+transform: scaleY(50%);
+    } */
+
 
     canvas {
-        zoom: 100%;
+        zoom: 100%, 100%;
+        transform: scaleX(350%);
     }
-
     @page {
         size: A4
     }
 }
+
 
 
