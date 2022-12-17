@@ -10,7 +10,7 @@ function draw() {
     let c = color('rgb(0, 0, 0)');
     fill(c);
     noStroke();
-    rect(mouseX, mouseY, 8, 8);
+    rect(mouseX, mouseY, 28, 28);
 }
 
 function mousePressed() {

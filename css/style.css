@@ -1,3 +1,5 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 @font-face {
     font-family: 'one';
     src: url("/src/NotoSansEgyptianHieroglyphs-Regular.ttf");
@@ -13,10 +15,12 @@
 }
 
 body {
-    margin: 10px;
+    margin: 20px;
+    margin-right: 20px;
     position: absolute;
+    padding-top: 20px;
     font-family: 'one';
-    font-size: 9.9vw;
+    font-size: 9.7vw;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -29,21 +33,23 @@ body {
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
+    /* padding-right: 100px; */
 }
+
+.blank {
+    height: 45rem;
+}
+
 
 select {
     border: none;
-}
-
-.printing {
-
 }
 
 .icon_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
-    height: 1em;
+    height: 1.2em;
     z-index: 99;
 }
 
@@ -51,8 +57,8 @@ select {
     display: inline-grid;
     justify-content: space-evenly;
     align-content: center;
-    background-color: rgba(255, 255, 255, 1);
-    border: 0.8px solid black;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
     border-radius: 150px;
     color: black;
     font-size: 10vw;
@@ -65,7 +71,7 @@ select {
     justify-content: space-evenly;
     position: relative;
     width: 25%;
-    margin-right: -2.5%;
+    margin-right: -3.55%;
     font-family: 'one';
     border-radius: 150px;
     border: none;
@@ -135,32 +141,49 @@ select {
 }
 
 @media print {
-
-    html{
-    /* width: 210mm;
+    html {
+        /* width: 210mm;
     height: 297mm; */
-    zoom: 64%;
+    zoom: 55%;
+    /* background-size: 66%, 195%; */
     }
 
+body{
+
+    /* transform: scaleX(146%);
+    transform: translate(17.5%, 1%); */
+    /* font-size: 10vw; */
+    width: 210mm;
+    height: 297mm;
+    margin-right: -5;
+    transform: scaleX(105%);
+    background-size: 120%;
+    background-repeat: repeat-y;
+}
+
+.printing {
+    zoom: 175%;
+    /* transform: scale(125%); */
+    transform: translateY(1%);
+    transform: translateX(3%);
+    /* transform: translateY(10%); */
+
+}
+    canvas {
+        margin-top: 30px;
+        /* margin-top: -10vw;
+        margin-left: -15vw; */
+        zoom: 39%;
+        /* overflow: hidden;
+        transform: translateX(-4%); */
+        /* transform: scaleY(65%); */
+    }
     .icon {
         display: none;
     }
-
-    
-
-    /* .printing {
-transform: scaleY(50%);
-    } */
-
-
-    canvas {
-        zoom: 100%, 100%;
-        transform: scaleX(350%);
-    }
     @page {
-        size: A4
+        size:A4;
     }
 }
-
 
 
